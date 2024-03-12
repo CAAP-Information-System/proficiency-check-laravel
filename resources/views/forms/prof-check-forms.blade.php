@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('title','Create Form')
-<link rel="stylesheet" type="text/css" href="{{ url('css/create-form.css') }}">
+
 @section('content')
 
 <form action="#" method="POST">

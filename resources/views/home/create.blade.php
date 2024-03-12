@@ -1,8 +1,8 @@
-
 @extends('layouts.app')
+@section('title','Create Form')
 
-<link rel="stylesheet" type="text/css" href="{{ url('css/create-form.css') }}">
 @section('content')
+<link rel="stylesheet" type="text/css" href="{{ url('css/create_form.css') }}">
 <div class="container">
     <h2>Create Proficiency Record</h2>
 
@@ -15,8 +15,23 @@
     <form action="{{ route('proficiency.store') }}" method="POST">
         @csrf
 
-        <!-- Date of Notification -->
-        <!-- Date of Notification -->
+        <section class="create-section">
+            <header class="create-section-hdr">Application is hereby made for Pilot Proficiency Check-In</header >
+            <div class="form-group">
+                <select name="" class="form-control">
+                    <option value="">Turbojet Aircraft</option>
+                    <option value="">Flight Engine</option>
+                    <option value="">Helicopter IFR/Friday/Night</option>
+                    <option value="">Turbodrop Aircraft</option>
+                    <option value="">9 Pax ir 5700kg: IFR/VFR/Day/Night</option>
+                    <option value="">Helicopter Type - VFR Day Only</option>
+                    <option value="">Reciprocating Over 5700kg</option>
+                    <option value="">9 Pax or 5700kg: VFR Day Only</option>
+                    <option value="">Others</option>
+                </select>
+            </div>
+
+        </section>
         <div class="form-group">
             <label for="date_of_notification" class="create-label">Date of Notification:</label>
             <input type="date" name="date_of_notification" class="form-control @error('date_of_notification') is-invalid @enderror" required>
@@ -150,8 +165,8 @@
             <div class="invalid-feedback">{{ $message }}</div>
             @enderror
         </div>
-        <section>
-            <h1>Documentation Cetification</h1>
+        <section class="create-section">
+            <header class="create-section-hdr">Documentation Cetification</header >
             <div class="checkbox-group">
                 <div class="form-group">
                     <input type="checkbox" name="option1">
@@ -175,8 +190,8 @@
                 </div>
             </div>
         </section>
-        <section>
-            <h1>Proficiency Check Results</h1>
+        <section class="create-section">
+            <header class="create-section-hdr">Proficiency Check Results</header >
             <div class="checkbox-group">
                 <div class="form-group">
                     <div><label for="" class="create-label">1. Oral Check</label></div>
@@ -228,8 +243,8 @@
             </div>
 
         </section>
-        <section>
-            <h1>Check Conducted By:</h1>
+        <section class="create-section">
+            <header class="create-section-hdr">Check Conducted By:</header >
             <div class="form-group">
                 <input type="checkbox" name="option1">
                 <label>1. CAA-FSIS</label>
@@ -255,8 +270,8 @@
                 <input type="text" name="option1" style="width: 20%;" class="form-control">
             </div>
         </section>
-        <section>
-            <h1>Check Conducted By:</h1>
+        <section class="create-section">
+            <header class="create-section-hdr">Check Conducted By:</header >
             <div class="form-group">
                 <label>Notes/Remarks</label>
                 <input name="" type="text" class="form-control">

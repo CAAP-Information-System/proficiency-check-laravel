@@ -5,7 +5,7 @@
 @section('content')
     <h1>Proficiencies</h1>
 
-    <a href="{{ route('proficiencies.create') }}" class="btn btn-success">Create New Proficiency</a>
+    <a href="" class="btn btn-success">Create New Proficiency</a>
 
     <table class="table">
         <thead>
@@ -17,15 +17,15 @@
             </tr>
         </thead>
         <tbody>
-            @foreach ($proficiencies as $proficiency)
+            @foreach ($proficiency as $proficiencies)
                 <tr>
-                    <td>{{ $proficiency->date_of_notification }}</td>
-                    <td>{{ $proficiency->person_notified }}</td>
+                    <td>{{ $proficiencies->date_of_notification }}</td>
+                    <td>{{ $proficiencies->person_notified }}</td>
                     <!-- Add other fields based on your requirements -->
                     <td>
-                        <a href="{{ route('proficiencies.show', $proficiency->id) }}" class="btn btn-info">View</a>
-                        <a href="{{ route('proficiencies.edit', $proficiency->id) }}" class="btn btn-primary">Edit</a>
-                        <form action="{{ route('proficiencies.destroy', $proficiency->id) }}" method="POST" style="display:inline;">
+                        <a href="{{ route('proficiencies.show', $proficiencies->id) }}" class="btn btn-info">View</a>
+                        <a href="{{ route('proficiencies.edit', $proficiencies->id) }}" class="btn btn-primary">Edit</a>
+                        <form action="{{ route('proficiencies.destroy', $proficiencies->id) }}" method="POST" style="display:inline;">
                             @csrf
                             @method('DELETE')
                             <button type="submit" class="btn btn-danger" onclick="return confirm('Are you sure?')">Delete</button>

@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('proficiency_forms', function (Blueprint $table) {
+        Schema::create('proficiencies', function (Blueprint $table) {
             $table->id();
             $table->date('date_of_notification');
             $table->string('person_notified');
@@ -24,9 +24,10 @@ return new class extends Migration
             $table->string('business_name');
             $table->string('certificate');
             $table->string('telephone');
+            $table->string('email');
             $table->dateTime('date');
             $table->string('signature_company');
-            $table->string('printed_name_title_of_company');
+            $table->string('official_name_or_company');
             $table->timestamps();
         });
     }
@@ -36,6 +37,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('proficiency_forms');
+        Schema::dropIfExists('proficiencies');
     }
 };

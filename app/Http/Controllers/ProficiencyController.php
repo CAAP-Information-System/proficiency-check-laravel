@@ -12,12 +12,12 @@ class ProficiencyController extends Controller
     public function index()
     {
         $proficiency = Proficiency::all();
-        return view('proficiency.index', compact('proficiency'));
+        return view('home.index', compact('proficiency'));
     }
 
     public function create()
     {
-        return view('proficiency.create');
+        return view('home.create');
     }
 
     public function store(Request $request)
@@ -28,20 +28,20 @@ class ProficiencyController extends Controller
 
         Proficiency::create($request->all());
 
-        return redirect()->route('proficiency.index')
+        return redirect()->route('home.index')
             ->with('success', 'Proficiency record created successfully.');
     }
 
     public function show($id)
     {
         $proficiency = Proficiency::findOrFail($id);
-        return view('proficiency.show', compact('proficiency'));
+        return view('home.show', compact('proficiency'));
     }
 
     public function edit($id)
     {
         $proficiency = Proficiency::findOrFail($id);
-        return view('proficiency.edit', compact('proficiency'));
+        return view('home.edit', compact('proficiency'));
     }
 
     public function update(Request $request, $id)
@@ -53,7 +53,7 @@ class ProficiencyController extends Controller
         $proficiency = Proficiency::findOrFail($id);
         $proficiency->update($request->all());
 
-        return redirect()->route('proficiency.index')
+        return redirect()->route('home.index')
             ->with('success', 'Proficiency record updated successfully.');
     }
 
@@ -62,7 +62,7 @@ class ProficiencyController extends Controller
         $proficiency = Proficiency::findOrFail($id);
         $proficiency->delete();
 
-        return redirect()->route('proficiency.index')
+        return redirect()->route('home.index')
             ->with('success', 'Proficiency record deleted successfully.');
     }
 }

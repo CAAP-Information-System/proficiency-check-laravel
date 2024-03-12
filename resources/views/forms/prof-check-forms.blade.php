@@ -111,9 +111,9 @@
         </div>
     </section>
     <section>
-    <h1>Check Conducted By:</h1>
+        <h1>Check Conducted By:</h1>
         <div class="form-group">
-        <label>Notes/Remarks</label>
+            <label>Notes/Remarks</label>
             <textarea name="" id="" cols="30" rows="10">
 
             </textarea>

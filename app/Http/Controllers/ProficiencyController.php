@@ -65,4 +65,9 @@ class ProficiencyController extends Controller
         return redirect()->route('home.index')
             ->with('success', 'Proficiency record deleted successfully.');
     }
+
+    public function form(Request $request)
+    {
+        return view('forms.prof-check-forms');
+    }
 }
